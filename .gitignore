@@ -1,3 +1,5 @@
 src/
 URLs/
 doxygen/
+dev/
+*.exe
