@@ -1,5 +1,0 @@
-{
-    "terminal.integrated.defaultProfile.windows": "Command Prompt",
-    "python.envFile": "${workspaceFolder}\\.venv",
-    "python.defaultInterpreterPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe"
-}
