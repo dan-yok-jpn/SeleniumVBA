@@ -1,23 +1,26 @@
 # Sample.xlsm
 
-&nbsp;&nbsp; **sample.xlsm** は、 VBA の [Selenium](https://www.selenium.dev/ja/documentation/) バインディングである [SeleniumVBA](https://github.com/GCuser99/SeleniumVBA) を用いて web スクレイピングを行うための VBA を含む Microsoft Excel オブジェクトであり、
+&nbsp;&nbsp; **sample.xlsm** は [SeleniumVBA](https://github.com/GCuser99/SeleniumVBA) を用いて web スクレイピングを行うための Microsoft Excel オブジェクトであり、
 
-* Thisworkbook
-* configure
-* proxySettengs
-* Sheet1
+* [Thisworkbook](#thisworkbook)
+* [configure](#configure)
+* [proxySettengs](#proxysettengs)
+* [Sheet1](#sheet1)
 
 のモジュールで構成される。
 
 ## Thisworkbook
 
 &nbsp;&nbsp; 起動時に以下の処理を行う。
+<span style="color:red">web ブラウザは Chrome に限定している。</span>
+起動に失敗する場合は[こちら](#トラブルシュート)を確認されたい。
 
-* SeleniumVBA.xlam のアドイン
 * プロキシサーバーにログインするための拡張機能のインストール
-* Chrome のバージョンに適合する WebDriver のインストール
-* 最新の SeleniumVBA のインストール
-* 実行時バインディングのためのパブリック・メソッド Create_Object 定義
+* Chrome のバージョンに適合するブラウザ・ドライバーのインストール
+* 最新の SeleniumVBA のインストールおよび VBA プロジェクトへの追加
+* 実行時バインディングのためのパブリック・メソッド Create_Object の定義
+
+![](img/basic_comms.png)
 
 ## configure
 
@@ -107,7 +110,8 @@ HTTP_PROXY 環境変数が設定されている場合は不使用。
 
 ## トラブルシュート
 
-&nbsp;&nbsp; 起動時に「実行時エラー '6068': Visual Basic Project へのプログラム的なアクセスは信頼されません。」と表示される場合は、以下の手順でアクセスを明示的に許可する必要がある。
+##### 「実行時エラー '6068': Visual Basic Project へのプログラム的なアクセスは信頼されません。」と表示される
+&nbsp;&nbsp; 以下の手順でアクセスを明示的に許可する必要がある。
 
 ![](img/dev.PNG)
 
