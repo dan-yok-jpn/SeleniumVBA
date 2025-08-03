@@ -3,7 +3,6 @@
 &nbsp;&nbsp; **sample.xlsm** は [SeleniumVBA](https://github.com/GCuser99/SeleniumVBA) を用いて web スクレイピングを行うための Microsoft Excel オブジェクトであり、
 
 * [Thisworkbook](#thisworkbook)
-* [configure](#configure)
 * [sample](#sample)
 
 のモジュールで構成される。
@@ -19,14 +18,6 @@
 * SeleniumVBA の参照設定
 
 ![](img/basic_comms.png)
-
-## configure
-
-&nbsp;&nbsp; 非表示のシート・モジュールでパブリック・プロパティ―として下記を保有
-
-* driverPath     ： WebDriver のパス
-* libraryPath    ： SeleniumVBA のパス
-* libraryVersion ： SeleniumVBA のバージョン
 
 ## sample
 
@@ -44,7 +35,7 @@
  5	    Dim keys As New SeleniumVBA.WebKeyboard
  6	
  7	    With New SeleniumVBA.WebDriver
- 8	        .StartChrome configure.driverPath
+ 8	        .StartChrome "%LOCALAPPDATA%\SeleniumVBA\chromedriver.exe"
  9	        .OpenBrowser
 10	        
 11	        .NavigateTo "https://www.selenium.dev/ja/documentation/"
@@ -72,7 +63,7 @@
 ### 解&nbsp;&nbsp;説
 
 **5 行目**&nbsp;&nbsp; WebKeyboard クラスのインスタンスを生成<br>
-**7 行目**&nbsp;&nbsp; configure.driverPath にある ChromeWebDriver を起動<br>
+**7 行目**&nbsp;&nbsp; %LOCALAPPDATA% にある ChromeWebDriver を起動<br>
 **10 行**&nbsp;&nbsp; [Selenium 紹介ページ](https://www.selenium.dev/ja/documentation/)に遷移。<br>
 
 ![](img/navigate.PNG)
