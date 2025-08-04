@@ -11,7 +11,7 @@ Option Explicit
 
 Private root_directory As String
 Private library_file   As String
-Public driver_file     As String
+Private driver_file    As String
 
 ' ****************************************************************
 '   https://tonari-it.com/excel-vba-windowsapi-urldownloadtofile/
@@ -84,12 +84,12 @@ Private Function download_installer() As Boolean
         "https://github.com/GCuser99/SeleniumVBA/raw/main/dist/SeleniumVBADLLSetup.exe", _
         ThisWorkbook.Path & "\SeleniumVBADLLSetup.exe", 0, 0)
     If res = 0 Then
-        msg = "ƒ‰ƒCƒuƒ‰ƒŠ‚ÌƒCƒ“ƒXƒg[ƒ‰‚ğƒ_ƒEƒ“ƒ[ƒh‚µ‚Ü‚µ‚½"
-        msg = msg & vbCrLf & "ƒCƒ“ƒXƒg[ƒ‹‚ğÀs‚µ‚Ä‰º‚³‚¢"
-        msg = msg & vbCrLf & "iƒCƒ“ƒXƒg[ƒ‹æ‚ÍƒNƒŠƒbƒvƒ{[ƒhİ’†‚Ì"
+        msg = "ï¿½ï¿½ï¿½Cï¿½uï¿½ï¿½ï¿½ï¿½ï¿½ÌƒCï¿½ï¿½ï¿½Xï¿½gï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½_ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½hï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½"
+        msg = msg & vbCrLf & "ï¿½Cï¿½ï¿½ï¿½Xï¿½gï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Ä‰ï¿½ï¿½ï¿½ï¿½ï¿½"
+        msg = msg & vbCrLf & "ï¿½iï¿½Cï¿½ï¿½ï¿½Xï¿½gï¿½[ï¿½ï¿½ï¿½ï¿½ÍƒNï¿½ï¿½ï¿½bï¿½vï¿½{ï¿½[ï¿½hï¿½İ’ï¿½ï¿½ï¿½"
         msg = msg & vbCrLf & vbTab & root_directory
-        msg = msg & vbCrLf & "‚ğw’èj"
-        msg = msg & vbCrLf & "ÀsŒãA‚±‚Ìƒ[ƒNƒuƒbƒN‚ğÄ‹N“®‚µ‚Ä‚­‚¾‚³‚¢"
+        msg = msg & vbCrLf & "ï¿½ï¿½ï¿½wï¿½ï¿½j"
+        msg = msg & vbCrLf & "ï¿½ï¿½ï¿½sï¿½ï¿½Aï¿½ï¿½ï¿½Ìƒï¿½ï¿½[ï¿½Nï¿½uï¿½bï¿½Nï¿½ï¿½ï¿½Ä‹Nï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
         MsgBox msg
         download_installer = True ' MSForms.DataObject
         With CreateObject("new:{1C3B4210-F441-11CE-B9EA-00AA006B1A69}")
@@ -150,17 +150,17 @@ Private Sub Workbook_Open()
 
     chrome_version = get_chrome_version()
     If chrome_version = "" Then
-        MsgBox "Google Chrome ‚ªƒCƒ“ƒXƒg[ƒ‹‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ" & _
-                    vbCrLf & "I—¹‚µ‚Ü‚·"
+        MsgBox "Google Chrome ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½Xï¿½gï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½" & _
+                    vbCrLf & "ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½"
         Exit Sub
     End If
 
     If Dir(library_file) = "" Then
-        MsgBoxResult = MsgBox("SeleniumVBA ‚ªƒCƒ“ƒXƒg[ƒ‹‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ" & _
-                        vbCrLf & "ƒCƒ“ƒXƒg[ƒ‰‚ğƒ_ƒEƒ“ƒ[ƒh‚µ‚Ü‚·‚©H", vbYesNo)
+        MsgBoxResult = MsgBox("SeleniumVBA ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½Xï¿½gï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½" & _
+                        vbCrLf & "ï¿½Cï¿½ï¿½ï¿½Xï¿½gï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½_ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½hï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½ï¿½H", vbYesNo)
         If MsgBoxResult = vbYes Then
             If download_installer() = False Then
-                MsgBox "ƒCƒ“ƒXƒg[ƒ‰‚Ìƒ_ƒEƒ“ƒ[ƒh‚É¸”s‚µ‚Ü‚µ‚½" & vbCrLf & "I—¹‚µ‚Ü‚·"
+                MsgBox "ï¿½Cï¿½ï¿½ï¿½Xï¿½gï¿½[ï¿½ï¿½ï¿½Ìƒ_ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½hï¿½Éï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½" & vbCrLf & "ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½"
                 Exit Sub
             Else
                 Application.Quit
@@ -170,17 +170,17 @@ Private Sub Workbook_Open()
         On Error Resume Next
         ThisWorkbook.VBProject.References.AddFromFile library_file
         If Not Err.Number = 0 Then
-            MsgBox "QÆİ’è‚É¸”s‚µ‚Ü‚µ‚½"
+            MsgBox "ï¿½Qï¿½Æİ’ï¿½Éï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½"
             Exit Sub
         End If
         installed_version = get_installed_libraly_version()
         recent_version = get_recent_libraly_version()
         If (Not IsEmpty(recent_version)) And (Not installed_version = recent_version) Then
-            MsgBoxResult = MsgBox("SeleniumVBA ‚ÌXV”Å‚ª‚ ‚è‚Ü‚·" & _
-                            vbCrLf & "XV”Å‚ÌƒCƒ“ƒXƒg[ƒ‰‚ğƒ_ƒEƒ“ƒ[ƒh‚µ‚Ü‚·‚©H", vbYesNo)
+            MsgBoxResult = MsgBox("SeleniumVBA ï¿½ÌXï¿½Vï¿½Å‚ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½" & _
+                            vbCrLf & "ï¿½Xï¿½Vï¿½Å‚ÌƒCï¿½ï¿½ï¿½Xï¿½gï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½_ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½hï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½ï¿½H", vbYesNo)
             If MsgBoxResult = vbYes Then
                 If download_installer() = False Then
-                    MsgBox "ƒCƒ“ƒXƒg[ƒ‰‚Ìƒ_ƒEƒ“ƒ[ƒh‚É¸”s‚µ‚Ü‚µ‚½" & vbCrLf & "I—¹‚µ‚Ü‚·"
+                    MsgBox "ï¿½Cï¿½ï¿½ï¿½Xï¿½gï¿½[ï¿½ï¿½ï¿½Ìƒ_ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½hï¿½Éï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½" & vbCrLf & "ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½"
                     Exit Sub
                 Else
                     Application.Quit
@@ -200,7 +200,7 @@ Private Sub Workbook_Open()
             On Error Resume Next
             .DownloadAndInstallDriver 1, recent_version, driver_file
             If Not Err.Number = 0 Then
-                MsgBox "ChromeDriver ‚ÌXV‚É¸”s‚µ‚Ü‚µ‚½"
+                MsgBox "ChromeDriver ï¿½ÌXï¿½Vï¿½Éï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½"
             End If
         End If
     End With
