@@ -35,7 +35,7 @@
  5	    Dim keys As New SeleniumVBA.WebKeyboard
  6	
  7	    With New SeleniumVBA.WebDriver
- 8	        .StartChrome "%LOCALAPPDATA%\SeleniumVBA\chromedriver.exe"
+ 8	        .StartChrome
  9	        .OpenBrowser
 10	        
 11	        .NavigateTo "https://www.selenium.dev/ja/documentation/"
